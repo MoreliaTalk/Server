@@ -1,0 +1,25 @@
+version: "3.0"
+
+services:
+
+  morelia:
+    build: .
+    command: python app.py
+    ports:
+      - 80:8000
+    depends_on:
+      - db
+    env_file:
+      - ./env.prod
+
+  db:
+    image: postgres:11
+    volumes:
+      - "postgres_data:/var/lib/postgresql/data"
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=database
+  
+volumes:
+  postgres_data:
