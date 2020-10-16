@@ -1,14 +1,22 @@
 import websockets
 import asyncio
 import json
+import click
+
+URI = "ws://35.228.157.42:8000/ws"
 
 
 async def sender(uri):
-    async with websockets.connect(uri) as websocket:
-        message = input("Input message:\n")
-        await websocket.send(json.dumps(message))
-        reciev = await websocket.recv()
-        print(reciev)
+    while True:
+        async with websockets.connect(uri) as websocket:
+            inputs = input("Input message:\n")
+            if inputs == '':
+                break
+            else:
+                message = json.dumps(inputs)
+                await websocket.send(message)
+                reciev = await websocket.recv()
+                print(reciev)
 
 
-#asyncio.get_event_loop().run_until_complete(sender("ws://35.228.157.42:8000/ws"))
+asyncio.get_event_loop().run_until_complete(sender(URI))
