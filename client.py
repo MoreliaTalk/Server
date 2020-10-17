@@ -17,7 +17,8 @@ async def sender(uri):
                 message = json.dumps(inputs)
                 await websocket.send(message)
                 try:
-                    await websocket.recv()
+                    reciev = await websocket.recv()
+                    print("Reciev message: ", reciev)
                 except websockets.exceptions.ConnectionClosedOK as error:
                     print("Connections close: ", error)
 
