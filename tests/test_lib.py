@@ -9,7 +9,7 @@ from loguru import logger
 # above the directory with the tests.
 BASE_PATH = os.path.abspath(os.path.dirname(__file__))
 sys.path.append(os.path.split(BASE_PATH)[0])
-from mod import lib
+from mod import lib  # noqa
 
 
 class TestHash(unittest.TestCase):
