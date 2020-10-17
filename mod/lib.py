@@ -2,10 +2,6 @@ import sys
 from hashlib import blake2b
 from hmac import compare_digest
 from os import urandom
-<<<<<<< HEAD
-from typing import Any
-=======
->>>>>>> master
 
 from mod import config
 

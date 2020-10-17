@@ -1,9 +1,6 @@
 # ************** Standart module *********************
 from datetime import datetime
-<<<<<<< HEAD
-=======
 from json import JSONDecodeError
->>>>>>> master
 # ************** Standart module end *****************
 
 
