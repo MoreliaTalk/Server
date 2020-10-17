@@ -4,7 +4,11 @@ import server
 
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     uvicorn.run(server,
+=======
+    uvicorn.run("server:app",
+>>>>>>> master
                 host="0.0.0.0",
                 port=8000,
                 http="h11",
