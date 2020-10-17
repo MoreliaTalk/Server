@@ -30,31 +30,18 @@ class Hash:
         hash_password (str, optional): password hash (previously calculated).
 
     """
-<<<<<<< HEAD
-    def __init__(self, password: str, uuid: int, salt: Any = None,
-                 key: Any = None, hash_password: str = None):
-=======
     def __init__(self, password: str, uuid: int, salt: bytes = None,
                  key: bytes = None, hash_password: str = None):
->>>>>>> master
 
         if salt is None:
             self.salt = urandom(16)
         else:
-<<<<<<< HEAD
-            self.salt = str(salt).encode('utf-8')
-=======
             self.salt = salt
->>>>>>> master
 
         if key is None:
             self.key = urandom(20)
         else:
-<<<<<<< HEAD
-            self.key = str(key).encode('utf-8')
-=======
             self.key = key
->>>>>>> master
 
         self.binary_password = password.encode('utf-8')
         self.uuid = uuid

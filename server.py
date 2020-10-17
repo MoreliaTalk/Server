@@ -95,13 +95,8 @@ async def websocket_endpoint(websocket: WebSocket):
             logger.info("".join(("Disconnection error: ", str(error))))
             clients.remove(websocket)
             break
-<<<<<<< HEAD
-        except RuntimeError as error:
-            logger.info("".join(("Runtime error: ", str(error))))
-=======
         except (RuntimeError, JSONDecodeError) as error:
             logger.info("".join(("Runtime or Decode error: ", str(error))))
->>>>>>> master
             clients.remove(websocket)
             break
         else:
