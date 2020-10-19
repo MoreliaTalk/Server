@@ -1,0 +1,15 @@
+version: "2.4"
+services:
+  django-db:
+    image: postgres:12
+    container_name: django-db
+    env_file:
+      - .env.database
+    restart: always
+    volumes:
+      - db_data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+
+volumes:
+  db_data:
